@@ -1,0 +1,100 @@
+<!--
+Kevin Pham
+HTML for Snake-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<style>
+			body {
+				background-color: "rgba(0, 0, 150, .5);
+			}
+			
+			canvas {
+				width: "500px";
+				height: "500px";
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h1>Snake</h1>
+		
+		<canvas id="my-canvas"></canvas>
+		
+		<script>
+			let myCanvas = document.getElementById("my-canvas");
+			
+			let ctx = myCanvas.getContext("2d");
+					
+			let snake = [{
+				x: 10,
+				y: 5
+			}];
+			
+			let vx = 1;
+			let vy = 0;
+			
+			function getHeadOfSnake() {
+				return snake[snake.length - 1];
+			}
+			
+			function eatFood() {
+			
+			}
+			
+			function moveSnake() {
+				const currentHead = getHeadOfSnake();
+				
+				const newHead = {
+					x: currentHead.x + vx,
+					y: currentHead.y + vy
+				};
+				
+				snake.push(newHead);
+				
+				removeTail();
+			}
+			
+			function removeTail() {
+				snake.shift();
+			}
+			
+			function isSnakeIntersectingWithSelf() {
+			
+			}
+			
+			function drawSnake() {
+				for (let i = 0; i < snake.length; i++) {
+					ctx.fillRect(snake[i].x * 10, snake[i].y * 10, 10, 10);
+					console.log(snake[i].y);
+				}
+			}
+			
+			function drawFood() {
+			
+			}
+			
+			function draw() {
+				drawSnake();
+				drawFood();
+			}
+			
+			function clear() {
+				ctx.clearRect(0, 0, 500, 500);
+			}
+			
+			function update() {
+				
+			}
+			
+			function frame() {
+				draw();
+				//clear();
+				update();
+			}
+			
+			let timer = setInterval(frame, 100);
+		</script>
+	</body>
+</html>

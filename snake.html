@@ -1,0 +1,91 @@
+<!--
+Kevin Pham
+This is the html file for a game of snake.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="snake.js"></script>
+    <style>
+      body {
+        background-color: rgba(200,0,0,.8);
+      }
+      h1 {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        font-family: 'Courier New', Arial;
+      }
+      main {
+        display: flex;
+        flex-direction: row;
+      }
+      canvas {
+        border: 1px solid black;
+        background-color: white;
+      }
+      #pause {
+        background-color: rgb(100,100,100);
+        width: 200px;
+        text-align: center;
+        vertical-align: center;
+        color: white;
+        font-family: Arial;
+        font-size: 40pt;
+        border: 1px solid black;
+      }
+      #pause:hover {
+        background-color: rgb(50,50,50);
+      }
+      #leaderboard {
+        width: 600px;
+        height: auto;
+        border: 2px solid black;
+        background-color: white;
+      }
+      .row {
+        position: relative;
+        display: block;
+        width: 90%;
+        height: 40px;
+        border-bottom: 2px solid #AFAFAF;
+        border-left: solid 10px;
+        border-left-color: gold;
+        padding-left: 5px;
+      }
+      .name {
+        position: relative;
+        display: inline-block;
+        width: 75%;
+        line-height: 45px;
+      }
+      .score {
+        position: relative;
+        display: inline-block;
+        width: 25%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Snake</h1>
+    <main>
+      <canvas id="canvas" width="500" height="500">
+
+      </canvas>
+      <div id="pause">Play</div>
+    </main>
+    <div id="leaderboard">
+      <div class="row">
+        <div class="name"></div><div class="score">0</div>
+      </div>
+      <div class="row">
+        <div class="name"></div><div class="score">0</div>
+      </div>
+      <div class="row">
+        <div class="name"></div><div class="score">0</div>
+      </div>
+    </div>
+  </body>
+</html>
